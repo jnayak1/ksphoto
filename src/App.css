@@ -1,32 +1,264 @@
-.App {
-  text-align: center;
+.carousel {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.full-screen {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.image-slide {
+  display: block;
+  max-height: 500px;
+  max-width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slide-arrow {
+  color: #14B6D4;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 300px;
+}
+
+.slide-arrow.right {
+  right: 1rem;
+  z-index: 3;
+}
+
+.slide-arrow.left {
+  left: 1rem;
+  z-index: 3;
+}
+
+.gallery-image {
+  display: inline;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.fixed-top-right {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  border-top: 1px solid #e5e5e5;
+}
+
+.float-right {
+  float: right;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+.margin-top-75 {
+  margin-top: 75px;
+}
+
+.float-left {
+  float: left;
+}
+
+.color-white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.grid {
+  margin:0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.grid-item {
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.grid-item:hover {
+  cursor: pointer;
+}
+
+.logo {
+  max-width: 60%;
+}
+
+@media only screen and (max-width: 800px) {
+  .logo {
+    max-width: 40%;
   }
-  to {
-    transform: rotate(360deg);
+  .change-width {
+    width: 75px;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  .change-width {
+    width: 40px;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .gallery {
+    margin-top: 50px;
+  }
+}
+
+.icon {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.inline {
+  display: inline;
+}
+
+.fixed-bottom-center {
+  position: fixed;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  
+  /* this is what centers your element in the fixed wrapper*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; /* aligns on vertical for column */
+  align-items: center; /* aligns on horizontal for column */
+}
+
+.black-text {
+  color: grey;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.max500 {
+  max-height: 500px;
+  max-width: 100%;
+}
+
+.out-link:hover img {
+  max-height: 100px;
+  color: palevioletred;
+  -webkit-transition: max-height 1s; /* Safari */
+  transition: max-height 1s;
+}
+
+.out-link img {
+  max-height: 80px;
+  -webkit-transition: max-height 1s; /* Safari */
+  transition: max-height 1s;
+}
+
+.out-link:hover h3 {
+  color: palevioletred;
+}
+
+.out-link:hover {
+  text-decoration: none;
+}
+
+.line {
+  border: 1px solid palevioletred; 
+  margin-left: 100%;
+  margin-right: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+  -webkit-transition: margin .5s; /* Safari */
+  transition: margin .5s;
+  transition-timing-function: ease-out;
+}
+
+.out-link:hover .line {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.out-link {
+  color: black;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
+div.img-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .center-vertical {
+    margin-top: -100px; /* Half the height */
+    margin-left: -250px; /* Half the width */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .center-vertical {
+    margin-top: -100px; /* Half the height */
+    margin-left: -150px; /* Half the width */
+  }
+}
+
+.center-vertical {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 200px;
+  max-width: 80%;  
+}
+
+.black-arrow {
+  color: grey;
+  font-size: 50px;
+}
+
+.splash {
+  height: 1000px;
+}
+
+.splash-photo {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+footer {
+  background-color: black;
+  height: 200px;
+  color: white;
+  position: relative;
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
 }

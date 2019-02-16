@@ -7,8 +7,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from "react-bootstrap/Button";
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import imagesLoaded from "imagesloaded";
-
 
 
 class CarouselWrapper extends React.Component {
@@ -73,8 +71,8 @@ class CarouselWrapper extends React.Component {
           <Carousel onSelect={this.slide} activeIndex={this.state.currentImageIndex} 
             prevIcon={<div className="black-arrow">&#8678;</div>} nextIcon={<div className="black-arrow">&#8680;</div>} pauseOnHover={false}
             indicators={false} interval={3000}>
-            {this.state.imgUrls.map(url => 
-              <Carousel.Item>
+            {this.state.imgUrls.map((url, i) => 
+              <Carousel.Item key={i}>
                   <img
                   className="d-block center max500"
                   src={url}
@@ -326,35 +324,32 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
-    return (
-      <div>
+    if (loading) {
+      return(
         <div className={loading ? "" : "none"}>
           <div id="logo-fade" className="img-container">
             <img src="white.gif" className="center-vertical translucent"/>
           </div>
         </div>
-
-        <div className={loading ? "none" : ""}>
-          <div className="container-fluid">
-            <Router>
-              <div>
-                <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 logo pt-3"></img></Link>
-                <div className="float-right icon">
-                  <Link to="/contact"><img alt="contact" src="contact.png" className="mr-5 change-width"></img></Link>           
-                  <Link to="/gallery"><img alt="gallery" src="gallery.png" className="change-width"></img></Link>
-                </div>
-                <Route exact path="/" component={HomePage} />
-                <Route path="/gallery" component={GalleryPage} />
-                <Route path="/contact" component={ContactPage} />
+      );
+    } else {
+      return(
+        <div className="container-fluid">
+          <Router>
+            <div>
+              <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 logo pt-3"></img></Link>
+              <div className="float-right icon">
+                <Link to="/contact"><img alt="contact" src="contact.png" className="mr-5 change-width"></img></Link>           
+                <Link to="/gallery"><img alt="gallery" src="gallery.png" className="change-width"></img></Link>
               </div>
-            </Router>
-            <footer>
-              <p className="footer-copyright">© 2019 Kathrin Swoboda Photography</p>
-            </footer>
-          </div>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/gallery" component={GalleryPage} />
+              <Route path="/contact" component={ContactPage} />
+            </div>
+          </Router>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

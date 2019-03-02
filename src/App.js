@@ -12,14 +12,14 @@ import Zoom from 'react-reveal/Zoom';
 class CarouselWrapper extends React.Component {
   constructor (props) {
     super(props);
-    
+
     this.state = {
       currentImageIndex: props.currentImageIndex,
       imgUrls: [],
       path: props.path,
       class: props.className
     };
-    
+
     this.getImages = this.getImages.bind(this);
     this.slide = this.slide.bind(this);
   }
@@ -38,7 +38,7 @@ class CarouselWrapper extends React.Component {
         Bucket : "kswoboda-photos"
       }; 
       var images = [];
-      
+
       s3.makeUnauthenticatedRequest("listObjects", bucketParams, function(err, data) {
         if (err) {
           console.log("Error", err);
@@ -63,7 +63,7 @@ class CarouselWrapper extends React.Component {
       currentImageIndex: eventKey
     });
   }
-  
+
   render() {
     return (
       <Fade>
@@ -71,10 +71,10 @@ class CarouselWrapper extends React.Component {
           <Carousel onSelect={this.slide} activeIndex={this.state.currentImageIndex} 
             prevIcon={<div className="black-arrow">&#8678;</div>} nextIcon={<div className="black-arrow">&#8680;</div>} pauseOnHover={false}
             indicators={false} interval={3000}>
-            {this.state.imgUrls.map((url, i) => 
+            {this.state.imgUrls.map((url, i) =>
               <Carousel.Item key={i}>
                   <img
-                  className="d-block center max500"
+                  className={"d-block center image-slide " + this.props.imageClassName}
                   src={url}
                   alt="slide"/>
               </Carousel.Item>)}
@@ -90,7 +90,7 @@ class Gallery extends Component {
   constructor (props) {
     super(props);
     this.myRef = React.createRef();
-    
+
     this.state = {
       imgUrls: [],
       currentImageIndex: 0,
@@ -138,7 +138,7 @@ class Gallery extends Component {
         Bucket : "kswoboda-photos"
       }; 
       var images = [];
-      
+
       s3.makeUnauthenticatedRequest("listObjects", bucketParams, function(err, data) {
         if (err) {
           console.log("Error", err);
@@ -181,8 +181,8 @@ class Gallery extends Component {
       <div className="">
         <div id="gallery-grid" className="gallery grid">
         </div>
-        <GalleryCarousel 
-          currentImageIndex={this.state.currentImageIndex} 
+        <GalleryCarousel
+          currentImageIndex={this.state.currentImageIndex}
           carouselOpen={this.state.carouselOpen} />
         <Copyright carouselOpen={this.state.carouselOpen} onClick={this.closeCarousel}/>
       </div>
@@ -223,7 +223,9 @@ class HomePage extends Component {
   render() {
     const image1 = "https://s3.amazonaws.com/kswoboda-photos/home/Florida-6655-Edit-5.jpg";
     return (
-      <Splash/>
+      <div className="no-overflow">
+        <CarouselWrapper path="home/" imageClassName="smaller-slide"/>
+      </div>
     );
   }
 }

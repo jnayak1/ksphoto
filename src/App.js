@@ -46,7 +46,7 @@ class CarouselWrapper extends React.Component {
         } else {
           data.Contents.forEach(function(obj){
             if(obj.Key.length > 8 && obj.Key.startsWith(_this.state.path)){
-              images.push("https://s3.amazonaws.com/kswoboda-photos/" + obj.Key);
+              images.push("dw48ipbmbxuns.cloudfront.net/" + obj.Key);
               _this.setState({
                 imgUrls: images
               });
@@ -146,7 +146,7 @@ class Gallery extends Component {
         } else {
           data.Contents.forEach(function(obj){
             if(obj.Key.length > 8 && obj.Key.startsWith("gallery/")){
-              images.push("https://s3.amazonaws.com/kswoboda-photos/" + obj.Key);
+              images.push("dw48ipbmbxuns.cloudfront.net/" + obj.Key);
               _this.setState({
                 imgUrls: images
               });
@@ -221,7 +221,6 @@ class GalleryCarousel extends Component {
 class HomePage extends Component {
 
   render() {
-    const image1 = "https://s3.amazonaws.com/kswoboda-photos/home/Florida-6655-Edit-5.jpg";
     return (
       <div className="no-overflow">
         <CarouselWrapper path="home/" imageClassName="smaller-slide"/>

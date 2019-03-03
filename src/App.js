@@ -46,7 +46,7 @@ class CarouselWrapper extends React.Component {
         } else {
           data.Contents.forEach(function(obj){
             if(obj.Key.length > 8 && obj.Key.startsWith(_this.state.path)){
-              images.push("dw48ipbmbxuns.cloudfront.net/" + obj.Key);
+              images.push("https://dw48ipbmbxuns.cloudfront.net/" + obj.Key);
               _this.setState({
                 imgUrls: images
               });
@@ -146,7 +146,7 @@ class Gallery extends Component {
         } else {
           data.Contents.forEach(function(obj){
             if(obj.Key.length > 8 && obj.Key.startsWith("gallery/")){
-              images.push("dw48ipbmbxuns.cloudfront.net/" + obj.Key);
+              images.push("https://dw48ipbmbxuns.cloudfront.net/" + obj.Key);
               _this.setState({
                 imgUrls: images
               });

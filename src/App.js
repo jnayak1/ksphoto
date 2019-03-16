@@ -106,7 +106,8 @@ class Gallery extends Component {
     var _this = this;
     this.getImages().then(function(images){
       var msnry = new Masonry(".grid", {
-        gutter: 20
+        gutter: 20,
+        horizontalOrder: true
       });
       var gridElement = document.getElementById("gallery-grid");
       for (var i = 0; i < images.length; i++) {

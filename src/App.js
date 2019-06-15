@@ -258,32 +258,46 @@ class ContactPage extends Component {
   render() {
     return(
       <Zoom>
-        <div className="m-5">
-          <div className="d-block">
-            <a className="d-block mb-3 out-link" href="mailto:kswoboda2421@gmail.com">
-              <hr className="line"/>
-              <img alt="email" src="email.png" className="mr-4"></img>
-              <h3 className="d-inline">Email kswoboda2421@gmail.com</h3>
-              <hr className="line"/>
-            </a>
-            <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/KathrinSwobodaPhotography">
-              <hr className="line"/>
-              <img alt="facebook" src="facebook.png" className="mr-4"></img>
-              <h3 className="d-inline">Facebook</h3>
-              <hr className="line"/>
-            </a>
-            <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/novanature/?hl=en">
-              <hr className="line"/>
-              <img alt="instagram" src="instagram.png" className="mr-4"></img>
-              <h3 className="d-inline">Instagram</h3>
-              <hr className="line"/>
-            </a>
-            <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/artinnature/">
-              <hr className="line"/>
-              <img alt="flickr" src="flickr.png" className="mr-4"></img>
-              <h3 className="d-inline">Flickr</h3>
-              <hr className="line"/>
-            </a>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="m-5">
+              <Link className="d-block mb-3 out-link big-out-link" to="/gallery">
+                <hr className="line"/>
+                <img alt="gallery" height="500" src="gallery.png" className="mr-4"></img>
+                <h3 className="d-inline">Gallery</h3>
+                <hr className="line"/>
+              </Link>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="m-5">
+              <div className="d-block">
+                <a className="d-block mb-3 out-link" href="mailto:kswoboda2421@gmail.com">
+                  <hr className="line"/>
+                  <img alt="email" src="email.png" className="mr-4"></img>
+                  <h3 className="d-inline">Email kswoboda2421@gmail.com</h3>
+                  <hr className="line"/>
+                </a>
+                <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/KathrinSwobodaPhotography">
+                  <hr className="line"/>
+                  <img alt="facebook" src="facebook.png" className="mr-4"></img>
+                  <h3 className="d-inline">Facebook</h3>
+                  <hr className="line"/>
+                </a>
+                <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/novanature/?hl=en">
+                  <hr className="line"/>
+                  <img alt="instagram" src="instagram.png" className="mr-4"></img>
+                  <h3 className="d-inline">Instagram</h3>
+                  <hr className="line"/>
+                </a>
+                <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/artinnature/">
+                  <hr className="line"/>
+                  <img alt="flickr" src="flickr.png" className="mr-4"></img>
+                  <h3 className="d-inline">Flickr</h3>
+                  <hr className="line"/>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Zoom>
@@ -296,14 +310,14 @@ class App extends Component {
 
   constructor (props) {
     super(props);
-    
+
     this.state = {
       loading: true
     };
 
     this.fadeOutEffect = this.fadeOutEffect.bind(this);
   }
-  
+
 
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 6500);
@@ -342,8 +356,7 @@ class App extends Component {
             <div>
               <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 logo pt-3"></img></Link>
               <div className="float-right icon">
-                <Link to="/contact"><img alt="contact" src="contact.png" className="mr-5 change-width"></img></Link>           
-                <Link to="/gallery"><img alt="gallery" src="gallery.png" className="change-width"></img></Link>
+                <Link to="/contact"><img alt="contact" src="hamburger.png" className="mr-5 change-width"></img></Link>           
               </div>
               <Route exact path="/" component={HomePage} />
               <Route path="/gallery" component={GalleryPage} />

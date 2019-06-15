@@ -124,11 +124,6 @@ div .smaller-slide {
   }
 }
 
-.icon {
-  margin-top: 20px;
-  margin-right: 50px;
-}
-
 .inline {
   display: inline;
 }
@@ -138,7 +133,7 @@ div .smaller-slide {
   bottom: 0px;
   height: 100%;
   width: 100%;
-  
+
   /* this is what centers your element in the fixed wrapper*/
   display: flex;
   flex-flow: column nowrap;
@@ -160,16 +155,23 @@ div .smaller-slide {
 }
 
 .out-link:hover img {
-  max-height: 100px;
+  height: 100px;
   color: palevioletred;
-  -webkit-transition: max-height 1s; /* Safari */
-  transition: max-height 1s;
+  -webkit-transition: height 1s; /* Safari */
+  transition: height 1s;
+}
+
+.big-out-link:hover img {
+  height: 200px;
+  color: palevioletred;
+  -webkit-transition: height 1s; /* Safari */
+  transition: height 1s;
 }
 
 .out-link img {
-  max-height: 80px;
-  -webkit-transition: max-height 1s; /* Safari */
-  transition: max-height 1s;
+  height: 80px;
+  -webkit-transition: height 1s; /* Safari */
+  transition: height 1s;
 }
 
 .out-link:hover h3 {
@@ -181,7 +183,7 @@ div .smaller-slide {
 }
 
 .line {
-  border: 1px solid palevioletred; 
+  border: 1px solid palevioletred;
   margin-left: 100%;
   margin-right: 100%;
   margin-bottom: 0;
@@ -239,7 +241,7 @@ div.img-container {
   left: 50%;
   width: 500px;
   height: 200px;
-  max-width: 80%;  
+  max-width: 80%;
 }
 
 .black-arrow {

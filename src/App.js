@@ -138,7 +138,7 @@ class Gallery extends Component {
 
       var bucketParams = {
         Bucket : "kswoboda-photos"
-      }; 
+      };
       var images = [];
 
       s3.makeUnauthenticatedRequest("listObjects", bucketParams, function(err, data) {
@@ -148,7 +148,7 @@ class Gallery extends Component {
         } else {
           data.Contents.forEach(function(obj){
             if(obj.Key.length > 8 && obj.Key.startsWith("gallery/")){
-              images.push("https://dw48ipbmbxuns.cloudfront.net/" + obj.Key);
+              images.push("https://s3.amazonaws.com/kswoboda-photos-resized/" + obj.Key);
               _this.setState({
                 imgUrls: images
               });

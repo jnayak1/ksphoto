@@ -8,7 +8,6 @@ import Button from "react-bootstrap/Button";
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 
-
 class CarouselWrapper extends React.Component {
   constructor (props) {
     super(props);
@@ -36,7 +35,7 @@ class CarouselWrapper extends React.Component {
 
       var bucketParams = {
         Bucket : "kswoboda-photos"
-      }; 
+      };
       var images = [];
 
       s3.makeUnauthenticatedRequest("listObjects", bucketParams, function(err, data) {
@@ -62,20 +61,25 @@ class CarouselWrapper extends React.Component {
     this.setState({
       currentImageIndex: eventKey
     });
+    var imgs = document.getElementsByClassName("image-slide");
+    if(imgs[eventKey].getAttribute('data-src')) {
+      imgs[eventKey].setAttribute('src', imgs[eventKey].getAttribute('data-src'));
+      imgs[eventKey].removeAttribute('data-src');
+    }
   }
 
   render() {
     return (
       <Fade>
         <div className={"col-sm-12 " + this.props.className}>
-          <Carousel onSelect={this.slide} activeIndex={this.state.currentImageIndex} 
+          <Carousel onSelect={this.slide} activeIndex={this.state.currentImageIndex}
             prevIcon={<div className="black-arrow">&#8678;</div>} nextIcon={<div className="black-arrow">&#8680;</div>} pauseOnHover={false}
             indicators={false} interval={3000}>
             {this.state.imgUrls.map((url, i) =>
               <Carousel.Item key={i}>
-                  <img
-                  className={"d-block center image-slide " + this.props.imageClassName}
-                  src={url}
+                <img
+                  className={"lazy d-block center image-slide " + this.props.imageClassName}
+                  data-src={url}
                   alt="slide"/>
               </Carousel.Item>)}
           </Carousel>
@@ -167,6 +171,13 @@ class Gallery extends Component {
       currentImageIndex: index,
       carouselOpen: true
     });
+    setTimeout(() => {
+      var imgs = document.getElementsByClassName("image-slide");
+      if(imgs[index].getAttribute('data-src')) {
+        imgs[index].setAttribute('src', imgs[index].getAttribute('data-src'));
+        imgs[index].removeAttribute('data-src');
+      }
+    }, 1000)
   }
 
   closeCarousel() {

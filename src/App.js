@@ -62,7 +62,7 @@ class CarouselWrapper extends React.Component {
       currentImageIndex: eventKey
     });
     var imgs = document.getElementsByClassName("image-slide");
-    if(imgs[eventKey].getAttribute('data-src')) {
+    if(imgs[eventKey] !== undefined && imgs[eventKey].getAttribute('data-src')) {
       imgs[eventKey].setAttribute('src', imgs[eventKey].getAttribute('data-src'));
       imgs[eventKey].removeAttribute('data-src');
     }
@@ -79,6 +79,7 @@ class CarouselWrapper extends React.Component {
               <Carousel.Item key={i}>
                 <img
                   className={"lazy d-block center image-slide " + this.props.imageClassName}
+                  src="loading.gif"
                   data-src={url}
                   alt="slide"/>
               </Carousel.Item>)}
@@ -232,6 +233,16 @@ class GalleryCarousel extends Component {
 }
 
 class HomePage extends Component {
+
+  componentDidMount() {
+    setTimeout(() => {
+      var imgs = document.getElementsByClassName("image-slide");
+      if(imgs[0].getAttribute('data-src')) {
+        imgs[0].setAttribute('src', imgs[0].getAttribute('data-src'));
+        imgs[0].removeAttribute('data-src');
+      }
+    }, 500)
+  }
 
   render() {
     return (

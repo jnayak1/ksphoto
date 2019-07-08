@@ -110,7 +110,7 @@ div .smaller-slide {
 
 @media only screen and (max-width: 800px) {
   .logo {
-    max-width: 40%;
+    max-width: 50%;
   }
   .change-width {
     width: 75px;

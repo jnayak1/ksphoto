@@ -208,7 +208,7 @@ class Copyright extends Component {
   render() {
     if(this.props.carouselOpen) {
       return (
-        <div className="fixed-top-right" onClick={this.props.onClick}>
+        <div className="fixed-bottom-right" onClick={this.props.onClick}>
           <p className="color-white float-left margin-20">© 2019 Kathrin Swoboda Photography</p>
           <Button className="btn btn-secondary ml-3 float-right margin-20">Close</Button>
         </div>

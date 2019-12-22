@@ -298,6 +298,14 @@ class ContactPage extends Component {
                 <hr className="line"/>
               </Link>
             </div>
+            <div className="m-5">
+              <a className="d-block mb-3 out-link" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
+                <hr className="line"/>
+                <img alt="cart" height="500" src="cart.png" className="mr-4"></img>
+                <h3 className="d-inline">Cart</h3>
+                <hr className="line"/>
+              </a>
+            </div>
           </div>
           <div className="col-md-6">
             <div className="m-5">
@@ -338,56 +346,54 @@ class ContactPage extends Component {
 class StorePage extends Component {
   render() {
     return(
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-8">
-            <h2>Prints now available from Kathrin Swoboda Photography</h2>
-            <p>
-              All prints are unsigned and printed on Kodak Lustre Endura or Fuji Lustre Professional
-              Paper depending on product. Prices subject to change at any time.
-            </p>
-            <p>
-              Shipping to USA only. Allow minimum 1 week, shipping can be delayed by circumstances not
-              under my control. Production 1-2 days.
-            </p>
-            <h2>Photos available for sale:</h2>
-            <div>
-              <h5>2019 Audobon Grand Prize Winner</h5>
-              <img alt="audobon" className="height-500 mb-5" src="audobon.jpg"/>
-              <h5>Companion Piece</h5>
-              <img alt="companion" className="height-500 mb-5" src="companion.jpg"/>
-            </div>
+      <div className="row">
+        <div className="col-xl-8">
+          <h2>Prints now available from Kathrin Swoboda Photography</h2>
+          <p>
+            All prints are unsigned and printed on Kodak Lustre Endura or Fuji Lustre Professional
+            Paper depending on product. Prices subject to change at any time.
+          </p>
+          <p>
+            Shipping to USA only. Allow minimum 1 week, shipping can be delayed by circumstances not
+            under my control. Production 1-2 days.
+          </p>
+          <h2>Photos available for sale:</h2>
+          <div>
+            <h5>2019 Audobon Grand Prize Winner</h5>
+            <img alt="audobon" className="height-500 mb-5" src="audobon.jpg"/>
+            <h5>Companion Piece</h5>
+            <img alt="companion" className="height-500 mb-5" src="companion.jpg"/>
           </div>
-          <div className="col-xl-4">
-            <div className="sticky-top mb-5">
-              <h2>Order Form:</h2>
-              <form className="ml-3" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
-                <div className="d-block form-group">
-                  <label className="mr-2">Select Photo:</label>
-                  <select className="form-control" name="name">
-                    <option value="2019 Audobon Grand Prize Winner">2019 Audobon Grand Prize Winner</option>
-                    <option value="Companion Piece">Companion Piece</option>
-                  </select>
-                </div>
-                <div className="d-block form-group">
-                  <label className="mr-2">Select Option:</label>
-                  <select className="form-control">
-                    <option value="print">Print</option>
-                  </select>
-                </div>
-                <div className="d-block form-group">
-                  <label className="mr-2">Select Size:</label>
-                  <select className="form-control" name="size">
-                    <option value="8x12 inches">8x12 inches</option>
-                    <option value="10x13 inches">10x13 inches</option>
-                  </select>
-                </div>
-                <p className="mb-0">Price: $12.00 each</p>
-                <p>Shipping: $7.00</p>
-                <input type="hidden" name="price" value="12.00" />
-                <input type="submit" className="btn btn-success" value="Add to cart" />
-              </form>
-            </div>
+        </div>
+        <div className="col-xl-4">
+          <div className="sticky-top mb-5">
+            <h2>Order Form:</h2>
+            <form className="ml-3" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
+              <div className="d-block form-group">
+                <label className="mr-2">Select Photo:</label>
+                <select className="form-control" name="name">
+                  <option value="2019 Audobon Grand Prize Winner">2019 Audobon Grand Prize Winner</option>
+                  <option value="Companion Piece">Companion Piece</option>
+                </select>
+              </div>
+              <div className="d-block form-group">
+                <label className="mr-2">Select Option:</label>
+                <select className="form-control">
+                  <option value="print">Print</option>
+                </select>
+              </div>
+              <div className="d-block form-group">
+                <label className="mr-2">Select Size:</label>
+                <select className="form-control" name="size">
+                  <option value="8x12 inches">8x12 inches</option>
+                  <option value="10x13 inches">10x13 inches</option>
+                </select>
+              </div>
+              <p className="mb-0">Price: $12.00 each</p>
+              <p>Shipping: $7.00</p>
+              <input type="hidden" name="price" value="12.00" />
+              <input type="submit" className="btn btn-success" value="Add to cart" />
+            </form>
           </div>
         </div>
       </div>
@@ -444,11 +450,8 @@ class App extends Component {
         <div className="container-fluid">
           <Router>
             <div>
-              <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 logo pt-3"></img></Link>
-              <div className="float-right icon">
-                <a href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
-                  <img alt="cart" src="cart.png" className="mr-5 width-50px"></img>
-                </a>
+              <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
+              <div className="float-right text-right icon">
                 <Link to="/contact"><img alt="contact" src="hamburger.png" className="mr-5 change-width"></img></Link>
               </div>
               <Route exact path="/" component={HomePage} />

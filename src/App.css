@@ -1,7 +1,7 @@
-html, body { 
-  height: 100%; 
-  width: 100%; 
-  margin: 0; 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 .carousel {
@@ -113,7 +113,7 @@ div .smaller-slide {
     max-width: 50%;
   }
   .change-width {
-    width: 75px;
+    width: 50px;
   }
 }
 
@@ -283,5 +283,6 @@ footer {
 }
 
 .height-500 {
-  height: 500px;
+  max-height: 500px;
+  max-width: 100%;
 }

@@ -277,3 +277,11 @@ footer {
   bottom: 0;
   left: 20px;
 }
+
+.width-50px {
+  width: 50px;
+}
+
+.height-500 {
+  height: 500px;
+}

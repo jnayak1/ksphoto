@@ -343,58 +343,90 @@ class ContactPage extends Component {
   }
 }
 
-class StorePage extends Component {
+class PhotoForSale extends Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      price: this.props.options[0].price
+    };
+
+    this.updateHiddenFields = this.updateHiddenFields.bind(this);
+  }
+
+  updateHiddenFields(el) {
+    console.log(el.currentTarget.selectedIndex);
+    this.setState({
+      price: this.props.options[el.currentTarget.selectedIndex].price
+    });
+  }
+
   render() {
     return(
-      <div className="row">
-        <div className="col-xl-8">
-          <h2>Prints now available from Kathrin Swoboda Photography</h2>
-          <p>
-            All prints are unsigned and printed on Kodak Lustre Endura or Fuji Lustre Professional
-            Paper depending on product. Prices subject to change at any time.
-          </p>
-          <p>
-            Shipping to USA only. Allow minimum 1 week, shipping can be delayed by circumstances not
-            under my control. Production 1-2 days.
-          </p>
-          <h2>Photos available for sale:</h2>
-          <div>
-            <h5>2019 Audobon Grand Prize Winner</h5>
-            <img alt="audobon" className="height-500 mb-5" src="audobon.jpg"/>
-            <h5>Companion Piece</h5>
-            <img alt="companion" className="height-500 mb-5" src="companion.jpg"/>
+      <div className="float-left mr-5 mb-5">
+        <h5>{this.props.title}</h5>
+        <img alt="photoForSale" className="height-300" src={this.props.url}/>
+        <form name={"photo" + this.props.index} className="form-inline mt-1" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
+          <div className="form-group">
+            <label className="mr-2">Select Option:</label>
+            <select className="form-control mr-2" name="size"
+              onChange={(el) => this.updateHiddenFields(el)}>
+              {this.props.options.map((option, i) =>
+                  <option key={i} value={option.name}>
+                    {option.name} (${option.price})
+                  </option>
+              )}
+            </select>
+            <input type="hidden" name="price" value={this.state.price} />
+            <input type="hidden" name="name" value={this.props.title} />
           </div>
-        </div>
-        <div className="col-xl-4">
-          <div className="sticky-top mb-5">
-            <h2>Order Form:</h2>
-            <form className="ml-3" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
-              <div className="d-block form-group">
-                <label className="mr-2">Select Photo:</label>
-                <select className="form-control" name="name">
-                  <option value="2019 Audobon Grand Prize Winner">2019 Audobon Grand Prize Winner</option>
-                  <option value="Companion Piece">Companion Piece</option>
-                </select>
-              </div>
-              <div className="d-block form-group">
-                <label className="mr-2">Select Option:</label>
-                <select className="form-control">
-                  <option value="print">Print</option>
-                </select>
-              </div>
-              <div className="d-block form-group">
-                <label className="mr-2">Select Size:</label>
-                <select className="form-control" name="size">
-                  <option value="8x12 inches">8x12 inches</option>
-                  <option value="10x13 inches">10x13 inches</option>
-                </select>
-              </div>
-              <p className="mb-0">Price: $12.00 each</p>
-              <p>Shipping: $7.00</p>
-              <input type="hidden" name="price" value="12.00" />
-              <input type="submit" className="btn btn-success" value="Add to cart" />
-            </form>
-          </div>
+          <input type="submit" className="btn btn-success" value="Add to cart" />
+        </form>
+      </div>
+    )
+  }
+}
+
+class StorePage extends Component {
+  render() {
+
+    const photosForSale = [
+      {
+        title: "2019 Audobon Grand Prize Winner",
+        url: "audobon.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.00"},
+          {name: "10x13 Inch Print", price: "15.00"}
+        ]
+      },
+      {
+        title: "Companion Piece",
+        url: "companion.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.00"},
+          {name: "10x13 Inch Print", price: "15.00"}
+        ]
+      }
+    ];
+    return(
+      <div className="store">
+        <h2>Prints now available from Kathrin Swoboda Photography</h2>
+        <p>
+          All prints are unsigned and printed on Kodak Lustre Endura or Fuji Lustre Professional
+          Paper depending on product. Prices subject to change at any time.
+        </p>
+        <p>
+          Shipping to USA only. Allow minimum 1 week. Production 1-2 days.
+        </p>
+        <h2>Photos available for sale:</h2>
+        <div>
+          {photosForSale.map((photo, i) =>
+            <PhotoForSale key={i}
+                          title={photo.title}
+                          url={photo.url}
+                          options={photo.options}
+                          index={i}/>
+          )}
         </div>
       </div>
     );

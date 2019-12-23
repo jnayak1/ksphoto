@@ -482,6 +482,7 @@ class App extends Component {
             <div>
               <Link to="/" className="d-inline"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
               <div className="absolute-top-right icon">
+                <Link to="/store" className="d-none d-sm-none d-md-inline mr-3 orange-red">Prints now available!</Link>
                 <a className="mr-3" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
                   <img alt="cart" src="cart.png" className="width-50px"></img>
                 </a>

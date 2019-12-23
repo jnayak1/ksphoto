@@ -297,3 +297,14 @@ footer {
   right: 0px;
 
 }
+
+.orange-red {
+  color: rgb(234,53,56);
+  font-size: 20px;
+}
+
+.orange-red:hover {
+  color: rgb(234,53,56);
+  font-size: 20px;
+  text-decoration: none;
+}

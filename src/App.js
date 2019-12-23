@@ -237,7 +237,7 @@ class HomePage extends Component {
   componentDidMount() {
     setTimeout(() => {
       var imgs = document.getElementsByClassName("image-slide");
-      if(imgs[0].getAttribute('data-src')) {
+      if(imgs[0] && imgs[0].getAttribute('data-src')) {
         imgs[0].setAttribute('src', imgs[0].getAttribute('data-src'));
         imgs[0].removeAttribute('data-src');
       }
@@ -355,7 +355,6 @@ class PhotoForSale extends Component {
   }
 
   updateHiddenFields(el) {
-    console.log(el.currentTarget.selectedIndex);
     this.setState({
       price: this.props.options[el.currentTarget.selectedIndex].price
     });
@@ -368,7 +367,6 @@ class PhotoForSale extends Component {
         <img alt="photoForSale" className="height-300" src={this.props.url}/>
         <form name={"photo" + this.props.index} className="form-inline mt-1" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
           <div className="form-group">
-            <label className="mr-2">Select Option:</label>
             <select className="form-control mr-2" name="size"
               onChange={(el) => this.updateHiddenFields(el)}>
               {this.props.options.map((option, i) =>
@@ -379,6 +377,7 @@ class PhotoForSale extends Component {
             </select>
             <input type="hidden" name="price" value={this.state.price} />
             <input type="hidden" name="name" value={this.props.title} />
+            <input type="hidden" name="image" value={this.props.url} />
           </div>
           <input type="submit" className="btn btn-success" value="Add to cart" />
         </form>
@@ -395,16 +394,16 @@ class StorePage extends Component {
         title: "2019 Audobon Grand Prize Winner",
         url: "audobon.jpg",
         options: [
-          {name: "8x12 Inch Print", price: "12.00"},
-          {name: "10x13 Inch Print", price: "15.00"}
+          {name: "8x12 Inch Print", price: "12.99"},
+          {name: "10x13 Inch Print", price: "15.99"}
         ]
       },
       {
         title: "Companion Piece",
         url: "companion.jpg",
         options: [
-          {name: "8x12 Inch Print", price: "12.00"},
-          {name: "10x13 Inch Print", price: "15.00"}
+          {name: "8x12 Inch Print", price: "12.99"},
+          {name: "10x13 Inch Print", price: "15.99"}
         ]
       }
     ];
@@ -412,11 +411,10 @@ class StorePage extends Component {
       <div className="store">
         <h2>Prints now available from Kathrin Swoboda Photography</h2>
         <p>
-          All prints are unsigned and printed on Kodak Lustre Endura or Fuji Lustre Professional
-          Paper depending on product. Prices subject to change at any time.
+          All prints are unsigned and printed on Kodak Lustre Endura.
         </p>
         <p>
-          Shipping to USA only. Allow minimum 1 week. Production 1-2 days.
+          Shipping to USA only. Allow minimum 1 week.
         </p>
         <h2>Photos available for sale:</h2>
         <div>
@@ -482,8 +480,11 @@ class App extends Component {
         <div className="container-fluid">
           <Router>
             <div>
-              <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
-              <div className="float-right text-right icon">
+              <Link to="/" className="d-inline"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
+              <div className="absolute-top-right icon">
+                <a className="mr-3" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
+                  <img alt="cart" src="cart.png" className="width-50px"></img>
+                </a>
                 <Link to="/contact"><img alt="contact" src="hamburger.png" className="mr-5 change-width"></img></Link>
               </div>
               <Route exact path="/" component={HomePage} />

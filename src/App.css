@@ -290,3 +290,10 @@ footer {
 .store {
   min-height: 700px;
 }
+
+.absolute-top-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+}

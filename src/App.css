@@ -108,6 +108,10 @@ div .smaller-slide {
   max-width: 60%;
 }
 
+.min-75px {
+  min-height: 75px;
+}
+
 @media only screen and (max-width: 800px) {
   .logo {
     max-width: 50%;
@@ -195,14 +199,16 @@ div .smaller-slide {
   margin-bottom: 0;
   margin-top: 0;
   padding: 0;
-  -webkit-transition: margin .5s; /* Safari */
-  transition: margin .5s;
+  -webkit-transition: margin 1s; /* Safari */
+  transition: margin 1s;
   transition-timing-function: ease-out;
+  display: none;
 }
 
 .out-link:hover .line {
   margin-left: 0%;
   margin-right: 0%;
+  display: block;
 }
 
 .out-link {

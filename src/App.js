@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import './App.css';
+import './Hamburger.css';
 import AWS from 'aws-sdk';
 import Masonry from "masonry-layout";
 import Carousel from 'react-bootstrap/Carousel';
@@ -282,7 +283,7 @@ class ContactPage extends Component {
       <Zoom>
         <div className="row">
           <div className="col-md-6">
-            <div className="m-5">
+            <div className="mt-5 mb-5 ml-3">
               <Link className="d-block mb-3 out-link" to="/gallery">
                 <hr className="line"/>
                 <img alt="gallery" height="500" src="gallery.png" className="mr-4"></img>
@@ -290,7 +291,7 @@ class ContactPage extends Component {
                 <hr className="line"/>
               </Link>
             </div>
-            <div className="m-5">
+            <div className="mt-5 mb-5 ml-3">
               <Link className="d-block mb-3 out-link" to="/store">
                 <hr className="line"/>
                 <img alt="store" height="500" src="store.png" className="mr-4"></img>
@@ -298,7 +299,7 @@ class ContactPage extends Component {
                 <hr className="line"/>
               </Link>
             </div>
-            <div className="m-5">
+            <div className="mt-5 mb-5 ml-3">
               <a className="d-block mb-3 out-link" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
                 <hr className="line"/>
                 <img alt="cart" height="500" src="cart.png" className="mr-4"></img>
@@ -308,7 +309,7 @@ class ContactPage extends Component {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="m-5">
+            <div className="mt-5 mb-5 ml-3">
               <div className="d-block">
                 <a className="d-block mb-3 out-link" target="_blank" href="mailto:kswoboda2421@gmail.com">
                   <hr className="line"/>
@@ -431,6 +432,29 @@ class StorePage extends Component {
   }
 }
 
+class Hamburger extends Component {
+
+  constructor (props) {
+    super(props);
+  }
+
+  render() {
+
+    const contact = this.props.location.pathname.includes("/contact");
+
+    return(
+      <Link to={contact ? "/" : "/contact"}>
+        <button className={"min-75px hamburger hamburger--spring " + (contact ? "is-active" : "") } type="button">
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+      </Link>
+    );
+  }
+}
+
+const HamburgerWithRouter = withRouter(Hamburger);
 
 class App extends Component {
 
@@ -480,13 +504,15 @@ class App extends Component {
         <div className="container-fluid">
           <Router>
             <div>
-              <Link to="/" className="d-inline"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
+              <div className="min-75px">
+                <Link to="/"><img alt="logo" src="logo.png" className="col-md-4 d-inline logo pt-3"></img></Link>
+              </div>
               <div className="absolute-top-right icon">
                 <Link to="/store" className="d-none d-sm-none d-md-inline mr-3 orange-red">Prints now available!</Link>
-                <a className="mr-3" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
+                <a className="mr-3 d-none d-sm-none d-md-inline" href="https://kathrinswobodaphotography.foxycart.com/cart?cart=view">
                   <img alt="cart" src="cart.png" className="width-50px"></img>
                 </a>
-                <Link to="/contact"><img alt="contact" src="hamburger.png" className="mr-5 change-width"></img></Link>
+                <HamburgerWithRouter />
               </div>
               <Route exact path="/" component={HomePage} />
               <Route path="/gallery" component={GalleryPage} />

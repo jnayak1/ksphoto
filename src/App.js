@@ -399,7 +399,7 @@ class StorePage extends Component {
         ]
       },
       {
-        title: "Companion Piece",
+        title: "Companion",
         url: "companion.jpg",
         options: [
           {name: "8x12 Inch Print", price: "12.99"},

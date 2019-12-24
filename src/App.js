@@ -411,7 +411,7 @@ class StorePage extends Component {
       <div className="store">
         <h2>Prints now available from Kathrin Swoboda Photography</h2>
         <p>
-          All prints are unsigned and printed on Kodak Lustre Endura.
+          All prints are unsigned and printed on Kodak Endura Lustre.
         </p>
         <p>
           Shipping to USA only. Allow minimum 1 week.

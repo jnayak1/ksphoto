@@ -391,7 +391,7 @@ class StorePage extends Component {
 
     const photosForSale = [
       {
-        title: "2019 Audobon Grand Prize Winner",
+        title: "2019 Audubon Grand Prize Winner",
         url: "audobon.jpg",
         options: [
           {name: "8x12 Inch Print", price: "12.99"},

@@ -349,7 +349,8 @@ class PhotoForSale extends Component {
     super(props);
 
     this.state = {
-      price: this.props.options[0].price
+      price: this.props.options[0].price,
+      category: this.props.options[0].category
     };
 
     this.updateHiddenFields = this.updateHiddenFields.bind(this);
@@ -357,7 +358,8 @@ class PhotoForSale extends Component {
 
   updateHiddenFields(el) {
     this.setState({
-      price: this.props.options[el.currentTarget.selectedIndex].price
+      price: this.props.options[el.currentTarget.selectedIndex].price,
+      category: this.props.options[el.currentTarget.selectedIndex].category
     });
   }
 
@@ -377,6 +379,7 @@ class PhotoForSale extends Component {
               )}
             </select>
             <input type="hidden" name="price" value={this.state.price} />
+            <input type="hidden" name="category" value={this.state.category} />
             <input type="hidden" name="name" value={this.props.title} />
             <input type="hidden" name="image" value={this.props.url} />
           </div>
@@ -395,16 +398,18 @@ class StorePage extends Component {
         title: "2019 Audubon Grand Prize Winner",
         url: "audobon.jpg",
         options: [
-          {name: "8x12 Inch Print", price: "12.99"},
-          {name: "10x13 Inch Print", price: "15.99"}
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
         ]
       },
       {
         title: "Companion",
         url: "companion.jpg",
         options: [
-          {name: "8x12 Inch Print", price: "12.99"},
-          {name: "10x13 Inch Print", price: "15.99"}
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
         ]
       }
     ];
@@ -413,6 +418,10 @@ class StorePage extends Component {
         <h2>Prints now available from Kathrin Swoboda Photography</h2>
         <p>
           All prints are unsigned and printed on Kodak Endura Lustre.
+        </p>
+        <p>
+          A standout is a lustre print bonded to lightweight foam with a 3/4 inch black finished
+          edge with holes in back ready to hang. A beautiful and modern look without a frame or glass.
         </p>
         <p>
           Shipping to USA only. Allow minimum 1 week.

@@ -365,7 +365,7 @@ class PhotoForSale extends Component {
 
   render() {
     return(
-      <div className="float-left mr-5 mb-5">
+      <div>
         <h5>{this.props.title}</h5>
         <img alt="photoForSale" className="height-300" src={this.props.url}/>
         <form name={"photo" + this.props.index} className="form-inline mt-1" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
@@ -411,7 +411,96 @@ class StorePage extends Component {
           {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
           {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
         ]
-      }
+      },
+      {
+        title: "Bison in Snow",
+        url: "bison.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Common Terns Courtship",
+        url: "commonterns.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Eastern Bluebird Courtship",
+        url: "courtship.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Northern Flicker",
+        url: "flicker.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Hummingbird and Pink Flower",
+        url: "hummingbird.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Pelican Portrait",
+        url: "pelicanportrait.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Tufted Titmouse",
+        url: "titmouse.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Wait for Me",
+        url: "waitforme.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Bluebird and Winterberry",
+        url: "bluebird.jpg",
+        options: [
+          {name: "8x10 Inch Print", price: "10.99", category: "DEFAULT"},
+          {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
+          {name: "8x10 Inch Standout", price: "49.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Smith Island Pelicans",
+        url: "pelican.jpg",
+        options: [
+          {name: "8x10 Inch Print", price: "10.99", category: "DEFAULT"},
+          {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
+          {name: "8x10 Inch Standout", price: "49.99", category: "DEFAULT"}
+        ]
+      },
     ];
     return(
       <div className="store">
@@ -427,7 +516,7 @@ class StorePage extends Component {
           Shipping to USA only. Allow minimum 1 week.
         </p>
         <h2>Photos available for sale:</h2>
-        <div>
+        <div className="d-grid min-2000">
           {photosForSale.map((photo, i) =>
             <PhotoForSale key={i}
                           title={photo.title}

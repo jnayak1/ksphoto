@@ -314,3 +314,14 @@ footer {
   font-size: 20px;
   text-decoration: none;
 }
+
+.d-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+  text-align: center;
+}
+
+.min-2000 {
+  min-height: 2000px;
+}

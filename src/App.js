@@ -365,10 +365,10 @@ class PhotoForSale extends Component {
 
   render() {
     return(
-      <div className="mb-5">
+      <div className="mb-5 col-sm-12">
         <h5>{this.props.title}</h5>
         <img alt="photoForSale" className="height-300" src={this.props.url}/>
-        <form name={"photo" + this.props.index} className="form-inline mt-1" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
+        <form name={"photo" + this.props.index} className="form-inline mt-1 justify-content-center" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
           <div className="form-group">
             <select className="form-control mr-2" name="size"
               onChange={(el) => this.updateHiddenFields(el)}>

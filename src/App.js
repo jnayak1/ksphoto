@@ -365,7 +365,7 @@ class PhotoForSale extends Component {
 
   render() {
     return(
-      <div>
+      <div className="mb-5">
         <h5>{this.props.title}</h5>
         <img alt="photoForSale" className="height-300" src={this.props.url}/>
         <form name={"photo" + this.props.index} className="form-inline mt-1" action="https://kathrinswobodaphotography.foxycart.com/cart" method="post">
@@ -516,7 +516,7 @@ class StorePage extends Component {
           Shipping to USA only. Allow minimum 1 week.
         </p>
         <h2>Photos available for sale:</h2>
-        <div className="d-grid min-2000">
+        <div className="d-grid-desktop min-2000">
           {photosForSale.map((photo, i) =>
             <PhotoForSale key={i}
                           title={photo.title}

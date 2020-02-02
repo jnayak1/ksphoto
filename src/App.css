@@ -288,8 +288,9 @@ footer {
   width: 50px;
 }
 
-.height-300 {
-  height: 300px;
+.max-height-300 {
+  max-height: 300px;
+  max-width: 100%;
 }
 
 .store {

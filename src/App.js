@@ -282,7 +282,7 @@ class ContactPage extends Component {
     return(
       <Zoom>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div className="mt-5 mb-5 ml-3">
               <Link className="d-block mb-3 out-link" to="/gallery">
                 <hr className="line"/>
@@ -308,7 +308,7 @@ class ContactPage extends Component {
               </a>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div className="mt-5 mb-5 ml-3">
               <div className="d-block">
                 <a className="d-block mb-3 out-link" target="_blank" href="mailto:kswoboda2421@gmail.com">
@@ -333,6 +333,18 @@ class ContactPage extends Component {
                   <hr className="line"/>
                   <img alt="flickr" src="flickr.png" className="mr-4"></img>
                   <h3 className="d-inline">Flickr</h3>
+                  <hr className="line"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="mt-5 mb-5 ml-3">
+              <div className="d-block">
+                <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://shotkit.com/kathrin-swoboda/">
+                  <hr className="line"/>
+                  <img alt="shopkit" src="shotkit.jpg" className="mr-4"></img>
+                  <h3 className="d-inline">ShotKit</h3>
                   <hr className="line"/>
                 </a>
               </div>

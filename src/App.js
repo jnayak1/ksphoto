@@ -343,7 +343,7 @@ class ContactPage extends Component {
               <div className="d-block">
                 <a className="d-block mb-3 out-link" target="_blank" rel="noopener noreferrer" href="https://shotkit.com/kathrin-swoboda/">
                   <hr className="line"/>
-                  <img alt="shopkit" src="shotkit.jpg" className="mr-4"></img>
+                  <img alt="shotkit" src="shotkit.jpg" className="mr-4"></img>
                   <h3 className="d-inline">ShotKit</h3>
                   <hr className="line"/>
                 </a>

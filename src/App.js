@@ -210,7 +210,7 @@ class Copyright extends Component {
     if(this.props.carouselOpen) {
       return (
         <div className="fixed-bottom-right" onClick={this.props.onClick}>
-          <p className="color-white float-left margin-20">© 2019 Kathrin Swoboda Photography</p>
+          <p className="color-white float-left margin-20">© 2020 Kathrin Swoboda Photography</p>
           <Button className="btn btn-secondary ml-3 float-right margin-20">Close</Button>
         </div>
       );
@@ -511,6 +511,24 @@ class StorePage extends Component {
           {name: "8x10 Inch Print", price: "10.99", category: "DEFAULT"},
           {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
           {name: "8x10 Inch Standout", price: "49.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Reddish Egret",
+        url: "ReddishEgret.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Great Egret",
+        url: "GreatEgret.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
         ]
       },
     ];

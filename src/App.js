@@ -425,6 +425,15 @@ class StorePage extends Component {
         ]
       },
       {
+        title: "Territorial Dispute",
+        url: "territorialDispute.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
         title: "Bison in Snow",
         url: "bison.jpg",
         options: [
@@ -434,26 +443,8 @@ class StorePage extends Component {
         ]
       },
       {
-        title: "Common Terns Courtship",
-        url: "commonterns.jpg",
-        options: [
-          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
-          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
-          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
-        ]
-      },
-      {
-        title: "Eastern Bluebird Courtship",
-        url: "courtship.jpg",
-        options: [
-          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
-          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
-          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
-        ]
-      },
-      {
-        title: "Northern Flicker",
-        url: "flicker.jpg",
+        title: "Hummingbird and Bee",
+        url: "hummingbirdAndBee.jpg",
         options: [
           {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
           {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
@@ -523,6 +514,15 @@ class StorePage extends Component {
         ]
       },
       {
+        title: "Northern Flicker",
+        url: "flicker.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
         title: "Great Egret",
         url: "GreatEgret.jpg",
         options: [
@@ -551,8 +551,8 @@ class StorePage extends Component {
         ]
       },
       {
-        title: "Hummingbird and Bee",
-        url: "hummingbirdAndBee.jpg",
+        title: "Common Terns Courtship",
+        url: "commonterns.jpg",
         options: [
           {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
           {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
@@ -560,8 +560,8 @@ class StorePage extends Component {
         ]
       },
       {
-        title: "Territorial Dispute",
-        url: "territorialDispute.jpg",
+        title: "Eastern Bluebird Courtship",
+        url: "courtship.jpg",
         options: [
           {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
           {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},

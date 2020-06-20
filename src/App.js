@@ -531,6 +531,25 @@ class StorePage extends Component {
           {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
         ]
       },
+      {
+        title: "Little Estero Spoonbill",
+        url: "littleEsteroSpoonbill.jpg",
+        options: [
+          {name: "8x10 Inch Print", price: "10.99", category: "DEFAULT"},
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x13 Inch Print", price: "15.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
+      {
+        title: "Eastern Meadowlark",
+        url: "easternMeadowlark.jpg",
+        options: [
+          {name: "8x12 Inch Print", price: "12.99", category: "DEFAULT"},
+          {name: "10x15 Inch Print", price: "16.99", category: "DEFAULT"},
+          {name: "8x12 Inch Standout", price: "52.99", category: "DEFAULT"}
+        ]
+      },
     ];
     return(
       <div className="store">

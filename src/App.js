@@ -236,6 +236,9 @@ class GalleryCarousel extends Component {
 class HomePage extends Component {
 
   componentDidMount() {
+
+    window.location = "https://novanaturephotography.com";
+
     setTimeout(() => {
       var imgs = document.getElementsByClassName("image-slide");
       if(imgs[0] && imgs[0].getAttribute('data-src')) {
@@ -268,6 +271,10 @@ class Splash extends Component {
 
 class GalleryPage extends Component {
 
+  componentDidMount() {
+    window.location = "https://novanaturephotography.com";
+  }
+
   render() {
     return (
       <div>
@@ -278,6 +285,11 @@ class GalleryPage extends Component {
 }
 
 class ContactPage extends Component {
+
+  componentDidMount() {
+    window.location = "https://novanaturephotography.com";
+  }
+
   render() {
     return(
       <Zoom>
@@ -635,6 +647,8 @@ class App extends Component {
 
 
   componentDidMount() {
+    window.location = "https://novanaturephotography.com";
+    
     setTimeout(() => this.setState({ loading: false }), 6500);
     setTimeout(this.fadeOutEffect, 6250);
   }
